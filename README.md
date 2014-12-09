@@ -1,7 +1,7 @@
 Flagrc
 ------
 
-Flagrc enable arguments to be read from a file, similiar to [.ackrc](http://beyondgrep.com/documentation/).
+Flagrc reads arguments from a file, similiar to [.ackrc](http://beyondgrep.com/documentation/).
 
 Usage
 -----
