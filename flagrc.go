@@ -14,12 +14,18 @@ func ProcessFlagrc(filePath string) {
 		scanner := bufio.NewScanner(file)
 		for scanner.Scan() {
 			argument := strings.Trim(scanner.Text(), " ")
-			argumentName := getOnlyArgumentName(argument)
-			if !containsArgument(argumentName) {
-				appendArgument(argument)
+			if !isComment(argument) {
+				argumentName := getOnlyArgumentName(argument)
+				if !containsArgument(argumentName) {
+					appendArgument(argument)
+				}
 			}
 		}
 	}
+}
+
+func isComment(line string) bool {
+	return strings.HasPrefix(line, "#")
 }
 
 func getOnlyArgumentName(line string) string {
